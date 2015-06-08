@@ -11,10 +11,11 @@ import org.robolectric.RobolectricTestRunner;
 import static org.hamcrest.CoreMatchers.equalTo;
 
 @RunWith(RobolectricTestRunner.class)
-public class MainActivityTest {
+public class MainActivityTest extends RobolectricTest {
 
   @Test
   public void testSomething() {
+
     MainActivity mainActivity = Robolectric.setupActivity(MainActivity.class);
 
     TextView textView = (TextView) mainActivity.findViewById(R.id.textView);
