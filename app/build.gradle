@@ -7,7 +7,7 @@ android {
   defaultConfig {
     applicationId "androidproject.caniandroidnow"
     minSdkVersion 10
-    targetSdkVersion 22
+    targetSdkVersion 21
     versionCode 1
     versionName "1.0"
   }
@@ -19,7 +19,15 @@ android {
   }
 }
 
+def appCompatVersion = '22.2.0'
+
+def junitVersion = '4.12'
+def robolectricVersion = '3.0-rc3'
+
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
-  compile 'com.android.support:appcompat-v7:22.2.0'
+  compile "com.android.support:appcompat-v7:${appCompatVersion}"
+
+  testCompile "junit:junit:${junitVersion}"
+  testCompile "org.robolectric:robolectric:${robolectricVersion}"
 }
