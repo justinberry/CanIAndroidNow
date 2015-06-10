@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-
 apply from: 'coverage.gradle'
+apply from: 'checkstyle.gradle'
 
 android {
   compileSdkVersion 22
@@ -32,10 +32,13 @@ android {
 def appCompatVersion = '22.2.0'
 def junitVersion = '4.12'
 def robolectricVersion = '3.0-rc3'
+def checkstyleVersion = '6.7'
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   compile "com.android.support:appcompat-v7:${appCompatVersion}"
+
+  codequality "com.puppycrawl.tools:checkstyle:${checkstyleVersion}"
 
   testCompile "junit:junit:${junitVersion}"
   testCompile "org.robolectric:robolectric:${robolectricVersion}"

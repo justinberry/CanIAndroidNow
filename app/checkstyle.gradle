@@ -1,0 +1,12 @@
+configurations {
+  codequality
+}
+
+task checkstyle(type: Checkstyle) {
+  source 'src'
+
+  configFile file("${project.rootDir}/config/checkstyle/checkstyle.xml")
+
+  classpath = files()
+  checkstyleClasspath =  project.configurations.codequality
+}

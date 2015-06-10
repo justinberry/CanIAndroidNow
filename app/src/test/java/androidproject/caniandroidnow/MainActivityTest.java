@@ -23,3 +23,4 @@ public class MainActivityTest extends RobolectricTest {
 
   }
 }
+
